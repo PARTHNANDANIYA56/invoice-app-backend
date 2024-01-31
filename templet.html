@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body {
+  background: rgb(204,204,204); 
+
+}
+page {
+  background: #f9f9f9;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+page[size="A4"] {  
+  width: 21cm;
+  height: 29.7cm; 
+}
+page[size="A4"][layout="landscape"] {
+  width: 29.7cm;
+  height: 21cm;  
+}
+page[size="A3"] {
+  width: 29.7cm;
+  height: 42cm;
+}
+page[size="A3"][layout="landscape"] {
+  width: 42cm;
+  height: 29.7cm;  
+}
+page[size="A5"] {
+  width: 14.8cm;
+  height: 21cm;
+}
+page[size="A5"][layout="landscape"] {
+  width: 21cm;
+  height: 14.8cm;  
+}
+@media print {
+  body, page {
+    margin: 0;
+    box-shadow: 0;
+  }
+  @page {
+        size: 21cm 29.7cm;
+    }
+}
+
+.header{
+  background-color: #ffffff;
+  height: 9.9cm;
+
+  
+}
+
+.logo{
+    display :flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:0 30px ;
+}
+
+.Invoice_box{
+
+    display: flex;
+     align-items: center;
+}
+
+.Invoice_box .border-1{
+    width: 21cm;
+   height:  1.322917cm;
+    background-color: #00b0ff;
+    padding: 10px;
+    margin: 0;
+}
+.Invoice_box .text{
+    font-size: 72px;
+    font-family:Arial, Helvetica, sans-serif ;
+    word-spacing: -50%;
+    margin: 0 20px;
+}
+
+.Invoice_box .border-2{
+    width: 200px; height: 50px;
+    background-color: #00b0ff;
+    padding: 10px;
+    margin: 0;
+    justify-self: end;
+}
+
+.invoice_data{
+  display: flex;
+  justify-content: space-between;
+}
+
+.invoice_data  .invoce_data_left h4{
+  text-align: left;
+  margin:20px 30px ;
+  line-height: 2;
+  
+}
+
+.invoice_data  .invoce_data_right h4{
+  text-align: right;
+  margin:20px 30px ;
+  line-height: 2;
+  
+}
+
+.item_data{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 0;
+  height: 9.9cm;
+ 
+
+}
+
+/* .item_data .item_box{
+  box-shadow: 0px 0px 2px 0px;
+} */
+
+.item_data .border{
+
+  width: 700px; height: 25px;
+    background-color: #00b0ff;
+    padding: 10px;
+    /* margin: 0 30px; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.item_data .item_1{
+
+width: 700px; height: 25px;
+  background-color: #ffffff;
+  padding: 10px;
+  /* margin: 0 30px; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.item_data .item_2{
+
+width: 700px; height: 25px;
+  background-color: #dee2e6;
+  padding: 10px;
+  /* margin: 0 30px; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer{
+  background-color: #ffffff;
+  height: 9.9cm;
+}
+
+.footer .payment_details{
+  display: flex;
+justify-content: space-between;
+}
+
+.footer .payment_details .account_data {
+  text-align: left;
+  margin:20px 30px ;
+  line-height: 1.5;
+  
+}
+
+.footer .payment_details .account_data p span{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+.footer .payment_details .payment_details{
+  text-align: left;
+  margin:20px 30px ;
+}
+
+.footer .payment_details .payment_details h4{
+  line-height: 2;
+  /* text-align: right; */
+}
+
+.footer .payment_details .payment_details h4 .Subtotal {
+
+
+ display: flex;
+ justify-content:space-around
+}
+
+.footer .payment_details .payment_details h4 .Tax{
+  display: flex;
+ justify-content:space-around
+}
+
+.footer .payment_details .payment_details h4 .total {
+  width: 200px;
+  height:20px;
+  background-color: #00b0ff;
+  padding: 0 0 10px 0;
+  margin: 10px 0;
+ text-align: right;
+ display: flex;
+ justify-content:space-around
+}
+
+.footer .notes{
+  display: flex;
+ justify-content: space-between;
+  margin: 0 30px;
+  width: 715px; height: 75px;
+  background-color: #f9f9f9;
+  padding: 10px;
+
+}
+
+.footer .border {
+  border-bottom: 4px solid #00b0ff;
+  /* border-radius: 25px; */
+  margin: 30px 30px ;
+  font-weight: 600;
+  line-height: 1.5;
+
+}
+
+
+
+    </style>
+</head>
+<body>
+    
+   
+    <page size="A4">
+        <div class="header">
+            <div class="logo">
+                <div>
+                    <h1>LOGO</h1>
+                </div>
+                <div>
+                    <h3>Date:-10-122022</h3>
+                </div>
+            </div>
+            <div class="Invoice_box">
+              <div class="border-1"  ></div>
+              <div class="text">INVOICE</div>
+              <div class="border-2" ></div> 
+            </div>
+            <div class="invoice_data">
+            <div class="invoce_data_left">
+              <h4>
+                Bill no:- <br>
+                Invoice To:- <br>
+                Smit Bhadiyadra <br>  
+                address <br>
+                GST No:-1212121212121
+             
+              </h4>
+            </div>
+            <div class="invoce_data_right">
+              <h4>
+                Bill no:- <br>
+                Invoice To:- <br>
+                Smit Bhadiyadra <br>  
+                address <br>
+                GST No:-1212121212121
+                
+            
+            
+              </h4>
+              <a href="./Invoice.pdf"></a>
+            </div>
+            </div>
+
+          </div>
+          <div class="item_data">
+            <table class=" item_box" >
+              <tr class="border">
+                <th>No</th>
+                <th>itemname</th>
+                <th>description</th>
+                <th>Qty</th>
+                <th> price</th>
+                <th> total</th>
+              </tr>
+              <tr class="item_1">
+
+                <td>1</td>
+                <td>Food_app</td>
+                <td>delivery app</td>
+                <td>1 </td>
+                <td> 20000</td>
+                <td> 20000</td>
+              </tr>
+              <tr class="item_2">
+
+                <td>1</td>
+                <td>Food_app</td>
+                <td>delivery app</td>
+                <td>1 </td>
+                <td> 20000</td>
+                <td> 20000</td>
+                </tr>
+            </table>
+            
+          </div>
+
+          <div class="footer">
+    
+            <div class="payment_details">
+            <div class="account_data">
+              <p>
+                <span>Payment info:-</span> <br>
+                 Account No:- <br>
+                 IFSC code <br>  
+                 GST IN <br>
+              <p>
+            </div>
+            <div class="payment_details">
+              <h4>
+                <div class="Subtotal"> 
+                  <div>Subtotal:-</div>
+                  <div>500/-</div>
+                 </div>
+                 <div class="Tax"> 
+                  <div>Tax:-</div>
+                  <div>100/-</div>
+                 </div>
+               <div class="total"> 
+                <div>Total:-</div>
+                <div>600/-</div>
+               </div>
+
+              </h4>
+            </div>
+          </div>
+          <div class="notes">Notes:-</div>
+          <div class="border">Thank you for your business</div>
+          </div>
+    </page>
+</body>
+</html>

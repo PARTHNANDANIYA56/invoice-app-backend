@@ -1,0 +1,13 @@
+{
+    "db_url": "mongodb+srv://parthnandaniya:vz4pIYUedvUZ5Udc@cluster0.jdgo5sh.mongodb.net/Test",
+    "jwt_token_secret": "invoiceManager-Key",
+    "refresh_jwt_token_secret": "invoiceManager-Key",
+    "Winston": {
+        "level": "debug"
+    },
+    "nodemailer":{
+        "mail":"smit.semicolon@gmail.com",  
+        "password":"qrftbntammxyjmpq"
+    }
+
+} 
